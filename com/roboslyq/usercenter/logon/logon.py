@@ -6,4 +6,8 @@ def logon(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         print(username, password)
-    return render(request, 'index.html')
+        reshtml = 'welcome.html'
+        if username != 'roboslyq' or password != '123456':
+            reshtml = 'error.html'
+
+    return render(request, reshtml, {'username': username, 'password': password})

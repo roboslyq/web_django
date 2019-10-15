@@ -18,10 +18,12 @@ from django.urls import path
 from django.conf.urls import url
 from com.roboslyq.demo.helloworld import helloworld
 from com.roboslyq.usercenter.logon import logon
+import com.roboslyq.index as index
 import com.roboslyq.demo.template_demo1 as template
 
 
 urlpatterns = [
+    url(r'^$', index.index),  # 设置首页
     path('admin/', admin.site.urls),
     url('hello/', helloworld.hello1),
     url('logon/', logon.logon),
