@@ -30,11 +30,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    # Django中用户权限模块
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'com.roboslyq.usercenter.logon'
 ]
 
 MIDDLEWARE = [
@@ -98,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-
+# 设置时区和语言
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -118,6 +120,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 # mysql配置添加 roboslyq
+# Python3不支持MySQLdb，可用pymysql代替。
+# 1.首先，在Python虚拟环境下安装pymysql：pip install pymysql。
+# 2.然后，在项目文件夹下的_init_.py（实际上也可以添加到settings.py中，如上。）添加如下代码即可。
+
 import pymysql  # 一定要添加这两行！
 
 pymysql.install_as_MySQLdb()
@@ -126,9 +132,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
         'NAME': 'test',  # 数据库名，先前创建的
-        'USER': '1test_user',  # 用户名，可以自己创建用户
-        'PASSWORD': 'q2w3e4r(A',  # 密码
-        'HOST': '147.93.201.88',  # mysql服务所在的主机ip
+        'USER': 'test_user',  # 用户名，可以自己创建用户
+        'PASSWORD': '1q2w3e4r(A',  # 密码
+        'HOST': '47.93.201.88',  # mysql服务所在的主机ip
         'PORT': '3306',  # mysql服务端口
     }
 }
