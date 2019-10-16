@@ -24,11 +24,3 @@ class User(models.Model):
         ordering = ['c_time']
         verbose_name = '用户'
         verbose_name_plural = '用户'
-
-
-class Blog(models.Model):
-    name = models.CharField(max_length=100)
-    tagline = models.TextField()
-
-    def __str__(self):  # __unicode__ on Python 2
-        return self.name

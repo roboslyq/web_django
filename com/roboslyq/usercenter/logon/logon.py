@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from com.roboslyq.usercenter.logon.models import User
+from com.roboslyq.usercenter.logon import models
 
 
 def logon(request):
@@ -7,8 +7,7 @@ def logon(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         print(username, password)
-        user2 = User()
-        obj = user2.query(user_id=username, password=password)
+        obj = models.User.objects.get(name=username, password=password)
         if any(obj):
             return render(request, 'welcome.html', {'username': username, 'password': password})
         else:

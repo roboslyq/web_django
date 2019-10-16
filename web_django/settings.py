@@ -124,10 +124,6 @@ STATICFILES_DIRS = [
 # 1.首先，在Python虚拟环境下安装pymysql：pip install pymysql。
 # 2.然后，在项目文件夹下的_init_.py（实际上也可以添加到settings.py中，如上。）添加如下代码即可。
 
-import pymysql  # 一定要添加这两行！
-
-pymysql.install_as_MySQLdb()
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
