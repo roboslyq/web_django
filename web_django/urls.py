@@ -29,4 +29,5 @@ urlpatterns = [
     url('logon/', logon.logon),
     url('template1/', template.template_demo1),
     url('template2/', template.template_demo2)
+
 ]

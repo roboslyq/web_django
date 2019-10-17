@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
-        'NAME': 'test',  # 数据库名，先前创建的
+        'NAME': 'web_django',  # 数据库名，先前创建的
         'USER': 'test_user',  # 用户名，可以自己创建用户
         'PASSWORD': '1q2w3e4r(A',  # 密码
         'HOST': '47.93.201.88',  # mysql服务所在的主机ip
