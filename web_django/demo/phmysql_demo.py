@@ -16,5 +16,5 @@ conn = pymysql.connect(host=host, user=user, password=password, database=databas
 游标的使用
 '''
 cursor_1 = conn.cursor()  # 获取游标
-res = cursor_1.execute("select * from auth_user")  # 执行语句
+res = cursor_1.execute("select * from auth_user where first_name='robos1'")  # 执行语句
 print(cursor_1.fetchone())  # 结果是元组,fetchone()获取查询结果
