@@ -16,18 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from com.roboslyq.demo.helloworld import helloworld
-from com.roboslyq.usercenter.logon import logon
-import com.roboslyq.index as index
-import com.roboslyq.demo.template_demo1 as template
-
+from web_django.demo.helloworld import helloworld
+from web_django.usercenter import logon
+import web_django.index.index as index
+from web_django import demo as template
 
 urlpatterns = [
     url(r'^$', index.index),  # 设置首页
     path('admin/', admin.site.urls),
-    url('hello/', helloworld.hello1),
     url('logon/', logon.logon),
-    url('template1/', template.template_demo1),
-    url('template2/', template.template_demo2)
-
 ]

@@ -1,8 +1,5 @@
 from django.contrib import auth
 from django.shortcuts import render, redirect
-from com.roboslyq.usercenter.logon import models
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
 
 
 def logon(request):
@@ -12,12 +9,13 @@ def logon(request):
 
 class Logon(object):
 
-    def get(self, request):
-        return render(request, "login.html")
+    @staticmethod
+    def get(request):
+        return render(request, "logon.html")
 
     # 登陆模块
-
-    def logon(self, request):
+    @staticmethod
+    def logon(request):
         next_url = request.GET.get("next")
         print(request.POST)
         username = request.POST.get("username")
@@ -33,4 +31,4 @@ class Logon(object):
                 return redirect("/welcome.html")
         else:
             # 用户名或密码错误
-            return render(request, "login.html", {"error_msg": "用户名或密码错误"})
+            return render(request, "logon.html", {"error_msg": "用户名或密码错误"})

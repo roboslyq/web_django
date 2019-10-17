@@ -6,4 +6,4 @@ def template_demo1(request):
 
 
 def template_demo2(request):
-    return render(request, 'index.html')
+    return render(request, 'logon.html')

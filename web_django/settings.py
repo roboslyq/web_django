@@ -29,14 +29,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # django非关系型数据库模块
+    'django_cassandra_engine',
+    # django用户管理模块
     'django.contrib.admin',
-    # Django中用户权限模块
+    # Django中用户权限认证模块
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'com.roboslyq.usercenter.logon'
+    'web_django.usercenter'
 ]
 
 MIDDLEWARE = [
@@ -73,10 +76,26 @@ WSGI_APPLICATION = 'web_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# mysql配置添加 roboslyq
+# Python3不支持MySQLdb，可用pymysql代替。
+# 1.首先，在Python虚拟环境下安装pymysql：pip install pymysql。
+# 2.然后，在项目文件夹下的_init_.py（实际上也可以添加到settings.py中，如上。）添加如下代码即可。
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'web_django',  # 数据库名，先前创建的
+        'USER': 'test_user',  # 用户名，可以自己创建用户
+        'PASSWORD': '1q2w3e4r(A',  # 密码
+        'HOST': '47.93.201.88',  # mysql服务所在的主机ip
+        'PORT': '3306',  # mysql服务端口
     }
 }
 
@@ -119,18 +138,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-# mysql配置添加 roboslyq
-# Python3不支持MySQLdb，可用pymysql代替。
-# 1.首先，在Python虚拟环境下安装pymysql：pip install pymysql。
-# 2.然后，在项目文件夹下的_init_.py（实际上也可以添加到settings.py中，如上。）添加如下代码即可。
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
-        'NAME': 'web_django',  # 数据库名，先前创建的
-        'USER': 'test_user',  # 用户名，可以自己创建用户
-        'PASSWORD': '1q2w3e4r(A',  # 密码
-        'HOST': '47.93.201.88',  # mysql服务所在的主机ip
-        'PORT': '3306',  # mysql服务端口
-    }
-}
