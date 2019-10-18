@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from web_django.demo.helloworld import helloworld
-from web_django.usercenter import views as logonview
+from django_app.usercenter import views as logonview
 import web_django.views as indexviews
-from web_django import demo as template
 
 urlpatterns = [
     url(r'^$', indexviews.index),  # 设置首页
