@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django_cassandra_engine',
     # django用户管理模块
     'django.contrib.admin',
-    # Django中用户权限认证模块
+    # admin模块需要依赖于auth，contenttypes 和sessions 3个模块
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

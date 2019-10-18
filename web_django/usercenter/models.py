@@ -1,5 +1,9 @@
 from django.db import models
 
+'''
+models在python的MVC概念中M指models，即具体的表结构实体
+'''
+
 
 class User(models.Model):
     """
