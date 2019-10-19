@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_app.usercenter'
+    'django_app.usercenter.login',
+    # 图形验证码模块
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #  禁用CRSF校验，注意，投产时不能禁用
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -142,3 +144,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 应用参数配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sina.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'xxx@sina.com'
+EMAIL_HOST_PASSWORD = 'xxxxxx'
+CONFIRM_DAYS = 7  # 注册有效期天数
