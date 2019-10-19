@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import pymysql
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # django非关系型数据库模块
-    'django_cassandra_engine',
+    # 'django_cassandra_engine',
     # django用户管理模块
     'django.contrib.admin',
     # admin模块需要依赖于auth，contenttypes 和sessions 3个模块
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 ROOT_URLCONF = 'web_django.urls'
 
 TEMPLATES = [
@@ -87,6 +89,8 @@ WSGI_APPLICATION = 'web_django.wsgi.application'
 # Python3不支持MySQLdb，可用pymysql代替。
 # 1.首先，在Python虚拟环境下安装pymysql：pip install pymysql。
 # 2.然后，在项目文件夹下的_init_.py（实际上也可以添加到settings.py中，如上。）添加如下代码即可。
+
+pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
