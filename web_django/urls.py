@@ -32,13 +32,18 @@ from django.conf.urls import url
 from django_app.usercenter.login import views
 
 urlpatterns = [
+    # Django默认的后台管理页面
     path('admin/', admin.site.urls),
-    url(r'^$', views.index),  # 设置首页
+    # 设置首页
+    url(r'^$', views.index),
     path('index/', views.index),
+    # 自定义登录请求
     path('login/', views.login),
+    # 自定义用户注册请求
     path('register/', views.register),
     path('logout/', views.logout),
     path('confirm/', views.user_confirm),
+    # 图形验证码
     path('captcha/', include('captcha.urls')),
     path('assets/', include('django_app.cmdb.assets.urls')),
 ]

@@ -48,7 +48,8 @@ def index(request):
     if not request.session.get('is_login', None):
         # 重定向到urls.py中的/login/路径
         return redirect('/login/')
-    return render(request, 'usercenter/login/index.html')
+    return redirect('/assets/')
+    # render(request, 'usercenter/login/index.html')
 
 
 # 登陆服务
