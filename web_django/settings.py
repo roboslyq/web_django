@@ -25,7 +25,7 @@ SECRET_KEY = '&+=%n$@#%a7am#2e$6+a=sfc8@%)h7nbxbv6w(wa8i$yc4yf$u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_app.usercenter.login',
     # 图形验证码模块
     'captcha',
+    'django_app.cmdb.assets',
 ]
 
 MIDDLEWARE = [
@@ -126,9 +127,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 # 设置时区和语言
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+#
+# TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
