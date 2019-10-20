@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # django静态文件相关
     'django.contrib.staticfiles',
-    'django_app.usercenter.login',
     # 图形验证码模块
     'captcha',
+    # 本应用相关模块
+    'django_app.usercenter.login',
     'django_app.cmdb.assets',
 ]
 
