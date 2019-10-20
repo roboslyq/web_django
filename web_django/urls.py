@@ -33,8 +33,8 @@ from django_app.usercenter.login import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # url(r'^$', views.index),  # 设置首页
-    # path('index/', views.index),
+    url(r'^$', views.index),  # 设置首页
+    path('index/', views.index),
     path('login/', views.login),
     path('register/', views.register),
     path('logout/', views.logout),
