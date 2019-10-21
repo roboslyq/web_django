@@ -5,11 +5,11 @@ import os
 import sys
 import urllib.parse
 import urllib.request
+from django_app.cmdb.Client.conf import settings
 
 BASE_DIR = os.path.dirname(os.getcwd())
 # 设置工作目录，使得包和模块能够正常导入
 sys.path.append(BASE_DIR)
-from django_app.cmdb.Client.conf import settings
 
 
 def update_test(data):
