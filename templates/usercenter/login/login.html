@@ -68,6 +68,7 @@
     {#   <input type="text" name="captcha_1" required="" id="id_captcha_1" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">#}
     {# </div>#}
     {# 从而可div的id为img.captcha,验证码title为id_captcha_1验证码具体图片id为captcha #}
+    {#动态刷新验证码功能实现#}
     $('img.captcha').click(function () {
         $.getJSON('/captcha/refresh/', function (json) {
             // This should update your captcha image src and captcha hidden input

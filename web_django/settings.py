@@ -158,3 +158,21 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = 'xxx@sina.com'
 EMAIL_HOST_PASSWORD = 'xxxxxx'
 CONFIRM_DAYS = 7  # 注册有效期天数
+
+# django_simple_captcha 验证码配置其他配置项查看文档:https://django-simple-captcha.readthedocs.io/en/latest/advanced.html#captcha
+# -image-size 默认格式
+
+CAPTCHA_OUTPUT_FORMAT = '%(image)s %(text_field)s %(hidden_field)s '
+# 混淆样式
+CAPTCHA_NOISE_FUNCTIONS = (  # 'captcha.helpers.noise_null',    # 没有样式
+    # 'captcha.helpers.noise_arcs',                             # 线
+    'captcha.helpers.noise_dots',  # 点
+)
+# 图片中的文字为随机英文字母，如 mdsh
+# CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+# 图片中的文字为数字表达式，如2+2=
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+# 超时(minutes)
+CAPTCHA_TIMEOUT = 1
+# 控制图片的大小
+CAPTCHA_IMAGE_SIZE = (70, 30)
