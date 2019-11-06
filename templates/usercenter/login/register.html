@@ -68,5 +68,18 @@
     <script src="{% static 'script/lib/jquery.min.js' %} "></script>
     <script src="{% static 'script/lib/popper.min.js' %} "></script>
     <script src="{% static 'script/lib/bootstrap.min.js' %} "></script>
+    <script>
+        {# 从而可div的id为img.captcha,验证码title为id_captcha_1验证码具体图片id为captcha #}
+        {#动态刷新验证码功能实现#}
+        $('img.captcha').click(function () {
+            $.getJSON('/captcha/refresh/', function (json) {
+                // This should update your captcha image src and captcha hidden input
+                {#console.log(json);#}
+                $("img.captcha").attr("src", json.image_url);
+                $("#id_captcha_0").val(json.key);
+            });
+            return false;
+        });
+    </script>
   </body>
 </html>
